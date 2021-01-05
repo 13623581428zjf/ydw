@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>慧疗远程会诊平台</title>
+	<style>
+	        .joinButton {
+	        background: transparent;
+	        }
+	        .joinButton:hover {
+	        color: green;
+	        text-decoration: underline;
+	        }
+	        a:hover {
+	            cursor: pointer;
+	        }
+	        .tc-member-list-container {
+	            margin-top: 10px;
+	            width: 100%;
+	            height: 210px;
+	            background-color: #eee;
+	        }
+	        #sketchpad {
+	            width: 100%;
+	            height: 100%;
+	        }
+	        .processbar {
+	            left:50%;
+	            top:50%;
+	            width: 100px;
+	            height: 100px;
+	            border-radius: 8px;
+	            -webkit-transform: translate(-50%, -50%);
+	            -moz-transform: translate(-50%, -50%);
+	            transform: translate(-50%, -50%);
+	            position:absolute;
+	            background-color: rgba(0, 0, 0, 0.5);
+	            z-index: 999;
+	        }
+	        .processbar p{
+	            text-align: center;
+	            color: #ebebeb;
+	            text-align: center;
+	            vertical-align: middle;
+	            line-height: 100px;
+	        }
+    	</style>
+  <% if (process.env.NODE_ENV === 'production') { %>
+    <!-- 生产环境 -->
+    <script>document.write('<script src="./config/index.js?t=' + new Date().getTime() + '"><\/script>');</script>
+     <!--直播-->
+    <script type="text/javascript" src="https://sqimg.qq.com/expert_qq/edu/1.2.1/sketchpad_sdk.mini.js" charset="utf-8"></script>
+    <script src="https://sqimg.qq.com/expert_qq/webim/1.7.1/webim.min.js"></script>
+    <script src="https://sqimg.qq.com/expert_qq/webrtc/2.6/WebRTCAPI.min.js"></script>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121844058-1"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1" charset="utf-8"></script>
+  <% }else { %>
+    <!-- 开发环境 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./static/img/favicon.ico">
+    <script src="./static/config/index.js"></script>
+    <script src="./static/plugins/mock-1.0.0-beta3/mock-min.js"></script>
+    <script src="./static/plugins/echarts-3.8.5/echarts.common.min.js"></script>
+    <script src="./static/plugins/ueditor-1.4.3.3/ueditor.config.js"></script>
+    <script src="./static/plugins/ueditor-1.4.3.3/ueditor.all.min.js"></script>
+    <script src="./static/plugins/ueditor-1.4.3.3/lang/zh-cn/zh-cn.js"></script>
+    <!--直播-->
+    <script type="text/javascript" src="https://sqimg.qq.com/expert_qq/edu/1.2.1/sketchpad_sdk.mini.js" charset="utf-8"></script>
+    <script src="https://sqimg.qq.com/expert_qq/webim/1.7.1/webim.min.js"></script>
+    <script src="https://sqimg.qq.com/expert_qq/webrtc/2.6/WebRTCAPI.min.js"></script>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121844058-1"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1" charset="utf-8"></script>
+    <script type="text/javascript" src="./static/plugins/live/report.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./static/plugins/live/live-init.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./static/plugins/live/live-trtc.js" charset="utf-8"></script>
+  <% } %>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
